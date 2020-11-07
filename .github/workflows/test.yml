@@ -30,6 +30,6 @@ jobs:
           - name: autoflake!
             run: poetry run autoflake -r --check --remove-all-unused-imports --ignore-init-module-imports --remove-unused-variables .
           - name: mypy
-            run: find . -name "*.py" | xargs mypy --platform linux
+            run: find . -name "*.py" | xargs poetry run mypy --platform linux
           - name: Run Tests
             run: poetry run pytest tests/
