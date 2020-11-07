@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "analysis-db-api"
+version = "0.1.0"
+description = ""
+authors = ["FORCAS Product Division Analysis Team <group-fs-analysis@uzabase.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9"
+fastapi = "^0.61.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.1.2"
+black = "^19.10b0"
+isort = "^4.3.21"
+autoflake = "^1.4"
+mock = "^4.0.2"
+
+[tool.isort]
+line_length = 99
+multi_line_output = 3
+atomic = true
+include_trailing_comma = true
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[build-system]
+requires = ["poetry>=1.1.4"]
+build-backend = "poetry.masonry.api"
