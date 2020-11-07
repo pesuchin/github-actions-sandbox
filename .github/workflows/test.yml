@@ -2,7 +2,6 @@ name: analysis-db-api
 
 on:
     push:
-    pull_request:
 
 jobs:
     test:
