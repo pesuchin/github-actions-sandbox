@@ -2,7 +2,6 @@
     "family": "analysis-db-api",
     "executionRoleArn": "arn:aws:iam::464057627735:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "disableNetworking": false,
     "containerDefinitions": [
         {
             "name": "analysis-db-api-development",
@@ -27,7 +26,8 @@
                     "hostPort": 8000,
                     "protocol": "tcp"
                 }
-            ]
+            ],
+            "disableNetworking": false
         }
     ],
     "requiresCompatibilities": [
