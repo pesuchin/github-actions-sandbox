@@ -1,0 +1,34 @@
+{
+    "family": "analysis-db-api",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "analysis-db-api-development",
+            "image": "464057627735.dkr.ecr.us-east-2.amazonaws.com/analysis-db-api/analysis-db-api",
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            },
+            "cpu": 256,
+            "memory": 512,
+            "essential": true,
+            "privileged": false,
+            "readonlyRootFilesystem": false,
+            "healthCheck": {
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost/ || exit 1"
+                ],
+                "interval": 30,
+                "timeout": 20,
+                "retries": 3
+            }
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "pidMode": "task",
+    "ipcMode": "task"
+}

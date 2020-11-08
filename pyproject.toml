@@ -5,7 +5,7 @@ description = ""
 authors = ["FORCAS Product Division Analysis Team <group-fs-analysis@uzabase.com>"]
 
 [tool.poetry.dependencies]
-python = "3.8.5"
+python = "3.9"
 fastapi = "^0.61.1"
 uvicorn = "^0.12.2"
 
