@@ -73,6 +73,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: analysis-db-api
+        service: analysis-db-api-service
         cluster: analysis-db-api-development
         wait-for-service-stability: true
