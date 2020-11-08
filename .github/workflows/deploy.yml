@@ -66,13 +66,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: analysis-db-api
+        container-name: analysis-db-api-development
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: analysis-db-api
-        cluster: default
+        service: analysis-db-api-service
+        cluster: analysis-db-api-development
         wait-for-service-stability: true

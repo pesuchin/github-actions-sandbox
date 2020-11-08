@@ -10,9 +10,9 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 
 RUN \
-    --mount=type=cache,target=/root/.cache/pip \
-    --mount=type=secret,id=ssh,destination=/root/.ssh/id_rsa \
-    set -ex; \
+    #--mount=type=cache,target=/root/.cache/pip \
+    #--mount=type=secret,id=ssh,destination=/root/.ssh/id_rsa \
+    #set -ex; \
     # Install runtime and build packages
     apt-get update && \
     apt-get install -y --no-install-recommends ${RUNTIME_DEPENDENCIES} ${BUILD_DEPENDENCIES}\
@@ -35,4 +35,6 @@ RUN \
 # Copy entire app
 COPY . /app
 
-WORKDIR /app/bin/
+WORKDIR /app/app/
+
+CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]

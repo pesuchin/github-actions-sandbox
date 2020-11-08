@@ -7,6 +7,7 @@ authors = ["FORCAS Product Division Analysis Team <group-fs-analysis@uzabase.com
 [tool.poetry.dependencies]
 python = "3.9"
 fastapi = "^0.61.1"
+uvicorn = "^0.12.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1.2"
