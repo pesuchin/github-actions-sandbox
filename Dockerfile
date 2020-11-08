@@ -12,7 +12,7 @@ COPY pyproject.toml poetry.lock ./
 RUN \
     #--mount=type=cache,target=/root/.cache/pip \
     #--mount=type=secret,id=ssh,destination=/root/.ssh/id_rsa \
-    set -ex; \
+    #set -ex; \
     # Install runtime and build packages
     apt-get update && \
     apt-get install -y --no-install-recommends ${RUNTIME_DEPENDENCIES} ${BUILD_DEPENDENCIES}\

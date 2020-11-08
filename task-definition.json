@@ -1,5 +1,6 @@
 {
     "family": "analysis-db-api",
+    "executionRoleArn": "arn:aws:iam::464057627735:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
