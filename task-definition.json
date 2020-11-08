@@ -2,13 +2,11 @@
     "family": "analysis-db-api",
     "executionRoleArn": "arn:aws:iam::464057627735:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
+    "disableNetworking": false,
     "containerDefinitions": [
         {
             "name": "analysis-db-api-development",
             "image": "464057627735.dkr.ecr.us-east-2.amazonaws.com/analysis-db-api/analysis-db-api:latest",
-            "repositoryCredentials": {
-                "credentialsParameter": ""
-            },
             "cpu": 0,
             "memory": 128,
             "essential": true,
